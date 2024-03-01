@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>Быки и коровы</title>
+</head>
+
+<body>
+   <div class="tab_list">
+      <button class="tab_btn active" onclick="openTab('tab_human', this)">Человек vs Компьютер</button>
+      <button class="tab_btn" onclick="openTab('tab_computer', this)">Компьютер vs Человек</button>
+   </div>
+   <div id="tab_human" class="tab container">
+      <h2 class="title">Игра <span class="game_name">Быки&#128002; & Коровы&#128004;</span></h2>
+      <form id="form_human" class="form">
+         <input type="number" required autofocus class="input input_human" min="0" max="9">
+         <input type="number" required class="input input_human" min="0" max="9">
+         <input type="number" required class="input input_human" min="0" max="9">
+         <input type="number" required class="input input_human" min="0" max="9">
+         <button type="submit" class="btn">Сделать ход</button>
+      </form>
+      <div id="attempts" class="hidden">
+         <h3 class="attempts_title">Попытки</h3>
+      </div>
+   </div>
+   <div id="tab_computer" class="tab container hidden">
+      <h2 class="title">Игра <span class="game_name">Быки&#128002; & Коровы&#128004;</span> наоборот</h2>
+      <div class="forms">
+         <form id="form_computer" class="form">
+            <input type="number" required autofocus class="input input_computer" min="0" max="9">
+            <input type="number" required class="input input_computer" min="0" max="9">
+            <input type="number" required class="input input_computer" min="0" max="9">
+            <input type="number" required class="input input_computer" min="0" max="9">
+            <button type="submit" id="submit_computer_game" class="btn">Загадать число</button>
+         </form>
+         <form id="form_help_view" class="hidden">
+            <input readonly class="input_help">
+            <input readonly class="input_help">
+            <input readonly class="input_help">
+            <input readonly class="input_help">
+         </form>
+         <form id="ask" class="form hidden">
+            <label for="bulls">Быков:</label>
+            <input type="number" required class="count_input" placeholder="0" id="bulls" min="0" max="9">
+         
+            <label for="cows">Коров:</label>
+            <input type="number" required class="count_input" placeholder="0" id="cows" min="0" max="9">
+            <button type="submit" id="submit_computer_game" class="btn">Ответить</button>
+         </form>
+      </div>
+   </div>
+   <div id="final" class="hidden">
+      <h3 id="final_text"></h3>
+   </div>
+   <div id="info"></div>
+   <div id="computer_guesses"></div>
+   <script src="./js/common.js"></script>
+   <script src="./js/human.js"></script>
+   <script src="./js/computer.js"></script>
+</body>
+
+</html>
